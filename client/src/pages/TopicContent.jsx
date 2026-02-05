@@ -24,7 +24,7 @@ const TopicContent = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch(`http://localhost:5000/api/topics/${slug}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/topics/${slug}`);
         if (!response.ok) {
           if (response.status === 404) {
             throw new Error('Topic not found');

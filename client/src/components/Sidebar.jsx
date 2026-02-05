@@ -12,7 +12,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchTopics = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/topics');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/topics`);
         if (!response.ok) throw new Error('Failed');
         const data = await response.json();
         setTopics(data);
