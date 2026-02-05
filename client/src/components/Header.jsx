@@ -20,9 +20,6 @@ const Header = () => {
         <div className="logo">
           <a href="/" className="logo-link">
             TechLearn
-            {/* If you have a real logo image later:
-            <img src="/logo.png" alt="TechLearn" className="logo-img" />
-            */}
           </a>
         </div>
 

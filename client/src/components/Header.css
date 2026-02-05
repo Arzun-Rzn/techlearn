@@ -1,5 +1,4 @@
-/* src/components/Header.css */
-
+/* Header container */
 .header {
   position: fixed;
   top: 0;
@@ -10,14 +9,17 @@
   border-bottom: 1px solid #e0e0e0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Dark mode header */
 .dark .header {
   background-color: #1a1a1a;
   border-bottom: 1px solid #333333;
   color: #ffffff;
 }
 
+/* Inner container */
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -28,15 +30,17 @@
   align-items: center;
 }
 
+/* Logo styles */
 .logo-link {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #2563eb;
+  color: #2563eb; /* blue in light mode */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .dark .logo-link {
-  color: #60a5fa;
+  color: #60a5fa; /* lighter blue in dark mode */
 }
 
 .logo-link:hover {
@@ -47,32 +51,38 @@
   color: #93c5fd;
 }
 
+/* Navigation */
 .nav {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
+/* Nav links: black in light mode, white in dark mode, slightly bold */
 .nav-link {
-  color: #374151;
+  color: #000000;             /* black in light mode */
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;            /* slightly bold */
   font-size: 1.05rem;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;  /* smooth hover transition */
+  transform: scale(1);         /* base scale */
 }
 
 .dark .nav-link {
-  color: #d1d5db;
+  color: #ffffff;             /* white in dark mode */
 }
 
+/* Hover effect: pop out smoothly */
 .nav-link:hover {
-  color: #2563eb;
+  color: #2563eb;             /* hover color in light mode */
+  transform: scale(1.1);      /* slightly bigger on hover */
 }
 
 .dark .nav-link:hover {
-  color: #60a5fa;
+  color: #60a5fa;             /* hover color in dark mode */
 }
 
+/* Theme toggle button */
 .theme-toggle {
   background: none;
   border: none;
@@ -80,11 +90,12 @@
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover {
   background-color: #f3f4f6;
+  transform: scale(1.1);       /* subtle pop on hover */
 }
 
 .dark .theme-toggle:hover {
