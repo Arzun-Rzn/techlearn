@@ -1,0 +1,137 @@
+/* src/App.css */
+
+/* Reset / base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: -apple-system, BlinkMacOSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* Dark mode base */
+.dark body {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+/* =========================
+   MAIN APP LAYOUT
+========================= */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Middle area (sidebar + main) */
+.content-wrapper {
+  flex: 1;              /* grows to push footer down */
+  display: flex;
+  align-items: stretch;
+  min-height: 0;        /* important for flex scrolling */
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  padding: 32px 40px;
+
+  background-color: #ffffff;
+
+  /* Let this scroll */
+  overflow-y: auto;
+
+  min-height: 0;
+}
+
+
+.sidebar {
+  height: 100%;
+}
+
+
+.dark .main-content {
+  background-color: #111827;
+}
+
+/* =========================
+   SIDEBAR INTERACTION
+========================= */
+
+.sidebar.closed + .main-content {
+  margin-left: 60px;
+}
+
+.sidebar.open + .main-content {
+  margin-left: 280px;
+}
+
+.footer {
+  flex-shrink: 0;
+
+  width: 100%;
+
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+
+  padding: 24px 40px;
+  text-align: center;
+
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+
+.dark .footer {
+  background: #1f2937;
+  border-top: 1px solid #374151;
+  color: #9ca3af;
+}
+
+/* =========================
+   GLOBAL MAIN TAG
+========================= */
+
+main {
+  width: 100%;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 60px;
+  }
+
+  .sidebar.open + .main-content {
+    margin-left: 280px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 24px 16px;
+  }
+}
